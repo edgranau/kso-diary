@@ -30,6 +30,7 @@ export default new VueRouter({
       component: load('Layout'),
       children: [
         { path: '', component: load('Home') },
+        { path: 'home', component: load('Home') },
         { path: 'keto', component: load('Keto') },
         { path: 'seizures', component: load('Seizures') },
         { path: 'observations', component: load('Observations') },
