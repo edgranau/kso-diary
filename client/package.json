@@ -17,6 +17,8 @@
     "quasar-framework": "^0.14.4",
     "vue": "^2.5.4",
     "vue-router": "^3.0.1",
+    "vue-the-mask": "^0.11.1",
+    "vuelidate": "^0.6.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
