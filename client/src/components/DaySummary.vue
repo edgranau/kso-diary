@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="layout-padding card-list row items-start">
     <!-- style="width: 210px" -->
-    <q-card class="kso-col-1" inline v-for="(value, key) in payload" :key="key">
+    <q-card inline v-for="(value, key) in payload" :key="key">
       <q-card-title>
         <span slot="subtitle">{{ key }}</span>
       </q-card-title>
@@ -88,6 +88,12 @@ export default {
 
 <style lang="stylus">
 @import '~variables'
+.card-list
+  .q-card
+    width 400px
+  @media (max-width $breakpoint-xs-max)
+    .q-card
+      width 100%
 .kso-col-1
   width 165px
   flex: 0 0 14%
