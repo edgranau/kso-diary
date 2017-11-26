@@ -7,7 +7,7 @@
       <!-- <q-card-separator /> -->
       <q-card-main>
         <q-field label="Type">
-          <q-input v-model="type" type="text"/>
+          <seizureTypes />
         </q-field>
         <q-field label="Date">
           <q-datetime type="datetime" v-model="dateTime" />
@@ -37,6 +37,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import SeizureTypes from 'src/components/SeizureTypes'
 import {
   QBtn,
   QCard,
@@ -66,7 +67,8 @@ export default {
     QInput,
     QOptionGroup,
     QRadio,
-    Toast
+    Toast,
+    SeizureTypes
   },
   data () {
     return {
