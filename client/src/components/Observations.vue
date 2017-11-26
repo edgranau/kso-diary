@@ -20,7 +20,7 @@
         </q-field>
       </q-card-main>
       <!-- <q-card-separator /> -->
-      <q-card-actions align="end">
+      <q-card-actions>
         <q-btn color="primary" @click="submit">Submit</q-btn>
       </q-card-actions>
     </q-card>
