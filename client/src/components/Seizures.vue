@@ -24,7 +24,7 @@
           <q-radio v-model="medication" val="no" left-label label="No" />
         </q-field>
         <q-field label="Notes">
-          <q-input v-model="notes" type="text"/>
+          <q-input v-model="notes" type="textarea" :max-height="100" :min-rows="2"/>
         </q-field>
       </q-card-main>
       <!-- <q-card-separator /> -->

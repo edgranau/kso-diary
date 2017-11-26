@@ -16,7 +16,7 @@
           <q-input v-model="title" type="text"/>
         </q-field>
         <q-field label="Details">
-          <q-input v-model="details" type="text"/>
+          <q-input v-model="details" type="textarea" :max-height="100" :min-rows="2"/>
         </q-field>
       </q-card-main>
       <!-- <q-card-separator /> -->
