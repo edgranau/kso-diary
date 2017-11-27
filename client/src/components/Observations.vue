@@ -7,12 +7,12 @@
       <!-- <q-card-separator /> -->
       <q-card-main>
         <q-field label="Type">
-          <q-input v-model="type" type="text"/>
+          <observation-types />
         </q-field>
         <q-field label="Date">
           <q-datetime type="datetime" v-model="dateTime" />
         </q-field>
-        <q-field label="title">
+        <q-field label="Short title">
           <q-input v-model="title" type="text"/>
         </q-field>
         <q-field label="Details">
@@ -29,6 +29,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import ObservationTypes from 'src/components/ObservationTypes'
 import {
   QBtn,
   QCard,
@@ -56,7 +57,8 @@ export default {
     QIcon,
     QInput,
     QOptionGroup,
-    Toast
+    Toast,
+    ObservationTypes
   },
   data () {
     return {
