@@ -18,17 +18,17 @@ export default {
         {
           label: 'Ratio change',
           value: 'ratio',
-          icon: 'fa-star'
+          icon: 'fa-adjust'
         },
         {
           label: 'Drug',
           value: 'drug',
-          icon: 'fa-circle'
+          icon: 'fa-flask'
         },
         {
           label: 'General',
           value: 'general',
-          icon: 'fa-square'
+          icon: 'fa-comment'
         }
       ]
     }
