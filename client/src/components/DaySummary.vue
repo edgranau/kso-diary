@@ -8,21 +8,33 @@
       <q-card-separator />
       <q-card-main>
         <div class="row">
-          <div class="col-4">
-            <div class="column">
-              <div style="font-size: 18px">{{ payload[key]['keto']['am']['value'] }}</div>
-              <div style="font-size: 18px">{{ payload[key]['keto']['pm']['value'] }}</div>
-            </div>
-          </div>
-          <div class="col-8">
-            <q-list v-if="hasObservations(key)">
+          <div class="col-12">
+            <q-list>
               <q-item>
                 <q-item-side>
-                  <q-item-tile color="red" icon="note" />
+                  <q-item-tile color="yellow" icon="fa-sun-o" />
                 </q-item-side>
                 <q-item-main>
-                  <q-item-tile label>{{ payload[key]['observations'][0]['title'] }}</q-item-tile>
-                  <q-item-tile sublabel>{{ payload[key]['observations'][0]['details'] }}</q-item-tile>
+                  <q-item-tile label>{{ payload[key]['keto']['am']['value'] }}</q-item-tile>
+                </q-item-main>
+              </q-item>
+              <q-item v-if="hasObservations(key) || hasSeizures(key)">
+                <q-item-side/>
+                <q-item-main>
+                  <q-chip v-if="hasSeizures(key)" icon="fa-bolt" color="secondary">
+                    {{ payload[key]['seizures'].length }}
+                  </q-chip>
+                  <q-chip v-if="hasObservations(key)" icon="fa-comment" color="tertiary">
+                    {{ payload[key]['observations'].length }}
+                  </q-chip>
+                </q-item-main>
+              </q-item>
+              <q-item>
+                <q-item-side>
+                  <q-item-tile color="indigo" icon="fa-moon-o" />
+                </q-item-side>
+                <q-item-main>
+                  <q-item-tile label>{{ payload[key]['keto']['pm']['value'] }}</q-item-tile>
                 </q-item-main>
               </q-item>
             </q-list>
@@ -40,6 +52,7 @@ import {
   QCardMain,
   QCardSeparator,
   QCardTitle,
+  QChip,
   QList,
   QItem,
   QItemSide,
@@ -58,6 +71,7 @@ export default {
     QCardMain,
     QCardSeparator,
     QCardTitle,
+    QChip,
     QList,
     QItem,
     QItemSide,
@@ -81,6 +95,9 @@ export default {
     ]),
     hasObservations (key) {
       return (this.payload[key]['observations'].length > 0)
+    },
+    hasSeizures (key) {
+      return (this.payload[key]['seizures'].length > 0)
     }
   }
 }
