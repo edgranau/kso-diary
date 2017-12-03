@@ -214,7 +214,9 @@ export default {
       this.$refs.DayDetailModal.close()
     },
     seizureDetails (seizure) {
-      return `${seizure.duration}, ${seizure.cluster}, ${seizure.medication}`
+      const cluster = (seizure.cluster === 'yes') ? 'cluster' : 'no cluster'
+      const medication = (seizure.medication === 'yes') ? 'medication' : 'no medication'
+      return `${seizure.duration}, ${cluster}, ${medication}`
     }
   }
 }
